@@ -1,15 +1,99 @@
+/* Common Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  background-color: #f5f5f5;
-  font-family: sans-serif;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Header */
+.header {
+  background-color: #333;
+  color: white;
+  padding: 15px 0;
+}
+
+.logo {
+  font-size: 1.5em;
+  font-weight: bold;
+  white-space: nowrap;
+  margin-right: 50px; /* 👈 This adds space between logo and menu */
+}
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.nav a:hover {
+  color: #00ffff;
+}
+
+/* Main */
+.main {
+  flex: 1;
+  padding: 40px 20px;
+  background-color: white;
   text-align: center;
-  padding-top: 50px;
 }
 
-h1 {
-  color: darkblue;
+/* Footer */
+.footer {
+  background-color: #222;
+  color: #ccc;
+  text-align: center;
+  padding: 15px;
 }
+/* Make nav responsive */
+@media screen and (max-width: 768px) {
+  .header .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 
-p {
-  color: green;
-  font-size: 18px;
+  .nav ul {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    padding-left: 0;
+  }
+
+  .nav ul li {
+    width: 100%;
+  }
+
+  .nav ul li a {
+    display: block;
+    width: 100%;
+    padding: 10px;
+  }
+
+  .logo {
+    margin-bottom: 10px;
+  }
 }
